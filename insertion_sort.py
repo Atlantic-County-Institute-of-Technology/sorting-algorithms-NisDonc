@@ -1,22 +1,18 @@
-# 1.) define i, starts at 1
-#
-
-import random
-chud_list = [random.randint(1, 100) for a in range(10)]
-
-for i in range(1,n):
-    list_i = i
-    current_val = chud_list[i]
-    i < length
-j = i-1
-    for j >= 0
-
-if < list [j]
-# 2.) for as long as i < the length of the list
-#     set j to i-1
-#     set the contents of the list at i to a temp val
-#     while j is >=0 AND temp < list [j]
-#     move list [j] "to the right", jtt
-
-# put temp in list jtl
-# increase I by 1
+def insertion_sort(values):
+    s_actions = 0
+    s_loops = 0
+    for i in range(1, len(values)):
+        s_loops += 1
+        # establish the current value we're positioning
+        key = values[i]
+        j = i-1
+        # from the point before i to the beginning of the list, backwards
+        while j >= 0 and key < values[j]:
+            s_loops += 1
+            # move values out of the way
+            values[j+1] = values[j]
+            j -= 1
+        # store key in the 'opening' we just made
+        values[j + 1] = key
+        s_actions += 1
+    return values, s_actions, s_loops
